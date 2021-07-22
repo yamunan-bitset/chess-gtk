@@ -1,3 +1,3 @@
-# Chess GTK+-2.0
-A Chess Game written in C with GTK 2.0
+# Chess GTK+-3.0
+A Chess Game written in C with GTK 3.0
 
