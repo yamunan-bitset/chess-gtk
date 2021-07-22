@@ -4,11 +4,6 @@
 
 extern void DrawBoard(); // board.c
 
-int board[8][8] =
-  {
-#include "board.inc"
-  };
-
 int main(int argc, char** argv, char** envp)
 {
   gtk_init(&argc, &argv);
