@@ -2,15 +2,15 @@
 #include <gdk/gdk.h>
 #include <cairo/cairo.h>
 
-extern enum Pieces;                  // pieces.c
-extern cairo_surface_t* surface[64]; // pieces.c
-extern void LoadPieces();            // pieces.c
+extern cairo_surface_t* surface[64];  // pieces.c
+extern void LoadPieces(cairo_t*);     // pieces.c
 
 void DrawBoard(GtkWidget* widget, GdkEventExpose* eev, gpointer data)
 {
   cairo_t* cr = gdk_cairo_create(gtk_widget_get_window(GTK_WIDGET(widget)));
 
   /*Draw Board*/
+  const char* squares[8][8];
   for (unsigned i = 0; i < 8; i++)
     for (unsigned j = 0; j < 8; j++)
       {

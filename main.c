@@ -2,7 +2,7 @@
 #include <gdk/gdk.h>
 #include <cairo/cairo.h>
 
-extern void DrawBoard(); // board.c
+extern void DrawBoard(GtkWidget*, GdkEventExpose*, gpointer); // board.c
 
 int main(int argc, char** argv, char** envp)
 {
