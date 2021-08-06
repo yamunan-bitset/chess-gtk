@@ -2,8 +2,6 @@
 #include <gdk/gdk.h>
 #include <cairo/cairo.h>
 
-extern const char* GetNote(int, int); // places.c
-
 int board[8][8] =
   {
 #include "board.inc"
@@ -30,7 +28,6 @@ static inline cairo_surface_t* DrawPiece(cairo_t* cr, const char* file, unsigned
 
 void LoadPieces(cairo_t* cr)
 {
-  // GdkDragContext* drag_context;
   for (unsigned i = 0; i < 8; i++)
     for (unsigned j = 0; j < 8; j++)
       {
@@ -50,9 +47,5 @@ void LoadPieces(cairo_t* cr)
 	  case b_rook:   surface[j * 8 + i] = DrawPiece(cr, "data/assets/b_rook.png", i, j);   break;
 	  case space:                                                                          break;
 	  }
-	printf("%s\n", GetNote(i*100, j*100));
-
-	// gtk_drag_set_icon_surface(drag_context, surface[j * 8 + i]);
-	// See TODO
       }
 }

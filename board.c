@@ -2,8 +2,8 @@
 #include <gdk/gdk.h>
 #include <cairo/cairo.h>
 
-extern cairo_surface_t* surface[64];  // pieces.c
-extern void LoadPieces(cairo_t*);     // pieces.c
+extern cairo_surface_t* surface[64]; // pieces.c
+extern void LoadPieces(cairo_t*);    // pieces.c
 
 void DrawBoard(GtkWidget* widget, GdkEventExpose* eev, gpointer data)
 {
@@ -20,7 +20,9 @@ void DrawBoard(GtkWidget* widget, GdkEventExpose* eev, gpointer data)
 	cairo_rectangle(cr, i*100, j*100, 100, 100);
 	cairo_restore(cr);
 	if ((i + j) % 2 == 0) cairo_set_source_rgb(cr, 1, 1, 1);
-	else                  cairo_set_source_rgb(cr, 0.36470588235294116f, 0.5764705882352941f, 0.7333333333333333f);
+	else                  cairo_set_source_rgb(cr, 0.36470588235294116f,
+						   0.5764705882352941f,
+						   0.7333333333333333f);
       }
       
       cairo_set_fill_rule(cr, CAIRO_FILL_RULE_EVEN_ODD);
@@ -29,14 +31,12 @@ void DrawBoard(GtkWidget* widget, GdkEventExpose* eev, gpointer data)
       cairo_rectangle(cr, 800, 800, 100, 100);
       cairo_restore(cr);
       cairo_set_source_rgb(cr, 1, 1, 1);
-      //else                  cairo_set_source_rgb(cr, 0.36470588235294116f, 0.5764705882352941f, 0.7333333333333333f);
   
   cairo_stroke(cr);  
 
   /*Load Pieces*/
   LoadPieces(cr);
   
-
   /*Destroy*/
   for (unsigned i = 0; i < 64; i++)
     cairo_surface_destroy(surface[i]);
