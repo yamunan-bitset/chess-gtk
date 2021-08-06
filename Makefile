@@ -1,5 +1,5 @@
 CC      = cc
-CFLAGS  = -pthread -I/usr/include/gtk-3.0 \
+CFLAGS  = -g -pthread -I/usr/include/gtk-3.0 \
 	-I/usr/include/at-spi2-atk/2.0 \
 	-I/usr/include/at-spi-2.0 -I/usr/include/dbus-1.0 \
 	-I/usr/lib/x86_64-linux-gnu/dbus-1.0/include \
