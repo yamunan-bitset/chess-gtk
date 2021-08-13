@@ -2,8 +2,10 @@
 #include <gdk/gdk.h>
 #include <cairo/cairo.h>
 
-extern cairo_surface_t* surface[64]; // pieces.c
-extern void LoadPieces(cairo_t*);    // pieces.c
+#include "estruct.h"
+
+extern struct Piece* pieces[64];   // pieces.c
+extern void LoadPieces(cairo_t*);  // pieces.c
 
 void DrawBoard(GtkWidget* widget, GdkEventExpose* eev, gpointer data)
 {
@@ -39,6 +41,6 @@ void DrawBoard(GtkWidget* widget, GdkEventExpose* eev, gpointer data)
   
   /*Destroy*/
   for (unsigned i = 0; i < 64; i++)
-    cairo_surface_destroy(surface[i]);
+    cairo_surface_destroy(pieces[i]);
   cairo_destroy(cr);
 }

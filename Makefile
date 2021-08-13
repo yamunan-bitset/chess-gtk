@@ -18,7 +18,7 @@ LDFLAGS = -lgtk-3 -latk-1.0 -lgio-2.0 -lgdk-3 -lpangocairo-1.0 \
 	-lpango-1.0 -lharfbuzz -lgdk_pixbuf-2.0 -lcairo-gobject \
 	-lgobject-2.0 -lglib-2.0 -lcairo -lglib-2.0
 
-OBJS    = pieces.o mouse.o board.o main.o
+OBJS    = notation.o pieces.o mouse.o board.o main.o
 OUT     = chess
 
 all: $(OBJS)
