@@ -2,8 +2,11 @@
 #include <gtk/gtk.h>
 #include <math.h>
 
-extern char GetX(double); // notation.c
-extern char GetY(double); // notation.c
+#include "estruct.h"
+
+extern char GetX(double);        // notation.c
+extern char GetY(double);        // notation.c
+extern struct Piece* pieces[64]; // pieces.c
 
 gboolean Clicked(GtkWidget* widget, GdkEventButton* event, gpointer user_data)
 {
