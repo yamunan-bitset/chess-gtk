@@ -4,8 +4,8 @@
 
 #include "estruct.h"
 
-extern struct Piece* pieces[64];   // pieces.c
 extern void LoadPieces(cairo_t*);  // pieces.c
+extern struct Piece* pieces[64];   // pieces.c
 
 void DrawBoard(GtkWidget* widget, GdkEventExpose* eev, gpointer data)
 {
@@ -40,7 +40,10 @@ void DrawBoard(GtkWidget* widget, GdkEventExpose* eev, gpointer data)
   LoadPieces(cr);
   
   /*Destroy*/
+  /* This gives SIGSEGV
   for (unsigned i = 0; i < 64; i++)
     cairo_surface_destroy(pieces[i]->surface);
+  */
+  
   cairo_destroy(cr);
 }
