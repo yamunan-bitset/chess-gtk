@@ -22,6 +22,13 @@ gboolean Clicked(GtkWidget* widget, GdkEventButton* event, gpointer user_data)
       double approxy = floor(y/100);
       printf("%c%c\n", GetX(approxx), GetY(approxy));
       
+      /*Check for a piece*/
+      /*
+      for (unsigned i = 0; i < sizeof pieces; i++)
+	if (GetX(pieces[i]->x) == GetX(approxx)
+	    && GetY(pieces[i]->y) == GetY(approxx))
+	  printf("Match\n");
+      */      
       /*Highlight Square*/
       cairo_t* cr = gdk_cairo_create(gtk_widget_get_window(GTK_WIDGET(widget)));
       cairo_set_fill_rule(cr, CAIRO_FILL_RULE_EVEN_ODD);

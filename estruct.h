@@ -13,7 +13,7 @@ enum Pieces
 struct Piece
 {
   cairo_surface_t* surface; // cairo surface
-  int x, y;                 // location
+  char x, y;                // location
 };
 
 #endif

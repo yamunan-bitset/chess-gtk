@@ -16,16 +16,22 @@ struct Piece* pieces[64];
 
 struct Piece* DrawPiece(cairo_t* cr, const char* file, unsigned xpos, unsigned ypos)
 {
-  struct Piece* piece;
   cairo_surface_t* surface = cairo_image_surface_create_from_png(file);
   cairo_set_source_surface(cr, surface, ypos*100, xpos*100);
   cairo_paint(cr);
+  
+  struct Piece piece =
+    {
+      .surface = surface, .x = GetX(xpos), .y = GetY(ypos)
+    };
+  /*
   piece->surface = surface;
   piece->x = xpos*100;
   piece->y = ypos*100;
-  printf("%d, %d\n", piece->x, piece->y);
-  printf("%c%c\n", GetX(piece->x), GetY(piece->y));
-  return piece;
+  */
+  printf("%d, %d\n", xpos*100, ypos*100);
+  printf("%c%c\n", piece.x, piece.y);
+  return &piece;
 }
 
 void LoadPieces(cairo_t* cr)

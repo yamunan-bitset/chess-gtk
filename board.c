@@ -41,6 +41,6 @@ void DrawBoard(GtkWidget* widget, GdkEventExpose* eev, gpointer data)
   
   /*Destroy*/
   for (unsigned i = 0; i < 64; i++)
-    cairo_surface_destroy(pieces[i]);
+    cairo_surface_destroy(pieces[i]->surface);
   cairo_destroy(cr);
 }
