@@ -1,2 +1,0 @@
-chess: ../cairo/src/cairo-surface.c:955: cairo_surface_destroy: Assertion `CAIRO_REFERENCE_COUNT_HAS_REFERENCE (&surface->ref_count)' failed.
-Aborted (core dumped)
